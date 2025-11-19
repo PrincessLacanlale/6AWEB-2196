@@ -1,0 +1,59 @@
+.education-section {
+  padding: 25px;
+  background: #ffffff; /* matches personal profile */
+  margin-bottom: 25px;
+  border-left: 4px solid #e85c9e; /* same as profile section */
+  border-radius: 8px;
+}
+
+.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-list > li {
+  margin-bottom: 18px;
+  padding: 15px 18px;
+  background: #fdeaf2;
+  border-radius: 6px;
+  border: 1px solid #f3c3d7;
+  transition: all 0.3s ease;
+}
+
+.education-list > li:hover {
+  background: #e85c9e;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(232, 92, 158, 0.2);
+}
+
+.education-degree {
+  font-size: 17px;
+  font-weight: 700;
+  color: #d63c82;
+  margin-bottom: 5px;
+}
+
+.education-institution {
+  font-size: 14px;
+  color: #6a4a57;
+  margin-bottom: 6px;
+}
+
+.education-duration {
+  font-size: 13px;
+  color: #a26c86;
+  margin-top: 6px;
+}
+
+.education-achievements {
+  padding-left: 18px;
+  margin-top: 6px;
+  color: #7a5768;
+}
+
+.education-achievements li {
+  margin-bottom: 4px;
+  font-size: 14px;
+}

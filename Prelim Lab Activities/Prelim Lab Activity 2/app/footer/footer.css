@@ -1,0 +1,40 @@
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  border-left: 5px solid #e85c9e;
+  padding-left: 12px;
+  color: #e23e8e;
+}
+
+.technical-skills {
+  padding: 25px;
+  background: #ffffff;
+  margin-bottom: 25px;
+  border-left: 4px solid #e85c9e;
+}
+
+.tech-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.tech-category {
+  background: #fdeaf2;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #f3c3d7;
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #d63c82;
+}
+
+.tech-items {
+  font-size: 14px;
+  color: #6e4d5d;
+}

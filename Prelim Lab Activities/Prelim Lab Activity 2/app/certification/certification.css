@@ -1,0 +1,20 @@
+.certification-section {
+  background: #ffffff;
+  padding: 30px 25px; /* expanded like other sections */
+  margin-bottom: 40px;
+  border-left: 6px solid #e85c9e; /* consistent with section titles */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(232, 92, 158, 0.12); /* subtle depth */
+}
+
+.certification-list {
+  list-style: disc inside;
+  padding-left: 0;
+  color: #7a5061;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.certification-list li {
+  margin-bottom: 10px;
+}

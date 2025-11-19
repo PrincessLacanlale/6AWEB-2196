@@ -1,0 +1,106 @@
+/* GLOBAL CONTAINER */
+.cv-container {
+  max-width: 900px;  /* keep your width */
+  margin: 0 auto;
+  padding: 30px 25px; /* slightly more padding for breathing room */
+  background: #fff7fb;
+}
+
+/* HEADER */
+.cv-header {
+  text-align: center;
+  padding: 35px 25px; /* expanded padding */
+  background: #fdeaf2;
+  border-bottom: 2px solid #f7c3db;
+  border-radius: 10px;
+  margin-bottom: 35px;
+  box-shadow: 0 6px 18px rgba(232, 92, 158, 0.12);
+}
+
+.name {
+  font-size: 34px;
+  font-weight: 800;
+  color: #d63c82;
+  margin-bottom: 12px;
+}
+
+.contact-info {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #6a4a57;
+}
+
+.contact-info a {
+  color: #e85c9e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.separator {
+  color: #b78ba0;
+}
+
+.divider {
+  height: 2px;
+  width: 85%;
+  margin: 25px auto 0 auto;
+  background: #f3b8d2;
+  border-radius: 2px;
+}
+
+/* SECTION TITLES */
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  border-left: 5px solid #e85c9e;
+  padding-left: 12px;
+  color: #e23e8e;
+}
+
+/* PERSONAL PROFILE */
+.profile-section {
+  background: #ffffff;
+  padding: 35px 30px; /* slightly more space */
+  margin-bottom: 40px;
+  border-left: 6px solid #f3b4ce;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(243, 180, 206, 0.15);
+}
+
+.profile-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-top: 12px;
+}
+
+/* SKILLS SECTION */
+.skills-section {
+  background: #ffffff;
+  padding: 30px 25px; /* expanded padding */
+  margin-bottom: 35px;
+  border-left: 4px solid #f3b4ce;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(243, 180, 206, 0.12);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.skills-list {
+  list-style: disc;
+  padding-left: 22px;
+  color: #7a5061;
+}
+
+.skills-list li {
+  margin-bottom: 8px;
+  font-size: 14.5px;
+}
