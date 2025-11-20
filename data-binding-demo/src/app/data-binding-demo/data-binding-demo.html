@@ -1,0 +1,23 @@
+<!-- <h2>{{ title }}</h2>
+<p>{{ description }}</p> -->
+
+<!-- Interpolation -->
+<!-- <p>2 + 3 = {{ 2 + 3 }}</p> -->
+
+<!-- Property Binding -->
+<!-- <img [src]="imageUrl" width="100"> -->
+
+<p [class.highlighted]="isHighlighted">This text uses class binding!</p>
+<button (click)="toggleHighlight()">Toggle Highlight</button>
+
+<!-- Style Binding -->
+<!-- <p [style.color]="textColor">This is color binding</p> -->
+
+<!-- Event Binding -->
+<!-- <button (click)="increase()">Increment</button>
+<button (click)="decrease()">Decrement</button>
+<p>Count: {{ count }}</p> -->
+
+<!-- Two-Way Binding -->
+<input [(ngModel)]="yourName" placeholder="Enter your name">
+<p>Hello, {{ yourName }}</p>
