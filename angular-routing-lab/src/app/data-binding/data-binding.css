@@ -1,0 +1,85 @@
+/* Main container resembling a resume paper */
+.resume-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* Main title */
+h1 {
+  font-size: 36px;
+  color: #e91e63;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Section titles */
+h2 {
+  font-size: 22px;
+  color: #c2185b;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f8bbd0;
+  padding-bottom: 5px;
+}
+
+/* Paragraphs */
+p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Images */
+img {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #f8bbd0;
+  border-radius: 50%;
+  max-width: 200px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #c2185b;
+}
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Class Binding for results */
+.passing {
+  color: green;
+  font-weight: bold;
+}
+.failing {
+  color: red;
+  font-weight: bold;
+}
+
+/* Style Binding Box */
+.box {
+  display: inline-block;
+  margin-top: 15px;
+  border: 2px solid #e91e63;
+  border-radius: 8px;
+  background-color: #ffe4ef;
+}

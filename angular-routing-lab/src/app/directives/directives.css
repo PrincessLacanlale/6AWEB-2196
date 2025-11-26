@@ -1,0 +1,81 @@
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header row */
+thead th {
+  background-color: #2c7a7b; /* teal shade */
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 3px solid #1c4d4d;
+}
+
+/* Body cells */
+tbody td, tr td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+}
+
+/* Alternate row colors */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect on rows */
+tbody tr:hover {
+  background-color: #e6f2f2;
+}
+
+/* Buttons inside tables */
+button {
+  padding: 8px 16px;
+  background-color: #2c7a7b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1c4d4d;
+}
+
+/* Input box */
+input[type="text"] {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #ff71bf;
+  outline: none;
+}
+
+/* Headings and paragraphs */
+h2, p {
+  margin: 0;
+  padding: 4px 0;
+  color: #333;
+}
+
+/* List styles */
+ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+ul li {
+  padding: 4px 0;
+  color: #444;
+}

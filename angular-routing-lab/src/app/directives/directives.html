@@ -1,0 +1,98 @@
+<table>
+  <tr>
+    <td>
+      <h2 *ngIf="isStaticNoteVisible === true; else falseNote">
+        This is a static note with true value!
+      </h2>
+      <ng-template #falseNote>
+        <h2>This static note has false value.</h2>
+      </ng-template>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <p *ngIf="isNoteVisible === true">This is a note!</p>
+    </td>
+    <td>
+      <button (click)="showNote()">Show Note</button>
+    </td>
+    <td>
+      <button (click)="hideNote()">Hide Note</button>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <button (click)="toggleNote()">
+        {{ isParagraphVisible ? 'Hide' : 'Show' }}
+      </button>
+      <p *ngIf="isParagraphVisible">This is the paragraph content.</p>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <p *ngIf="monthNameStatic === 'Jan'">January</p>
+      <p *ngIf="monthNameStatic === 'Feb'">February</p>
+      <p *ngIf="monthNameStatic === 'Mar'">March</p>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <p *ngIf="monthNameDynamic === 'Jan'">January</p>
+      <p *ngIf="monthNameDynamic === 'Feb'">February</p>
+      <p *ngIf="monthNameDynamic === 'Mar'">March</p>
+      <p *ngIf="monthNameDynamic !== 'Jan' && monthNameDynamic !== 'Feb' && monthNameDynamic !== 'Mar'">
+        Wrong input!
+      </p>
+    </td>
+
+    <td>
+      <input type="text" [(ngModel)]="monthNameDynamic" />
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <ul>
+        <li *ngFor="let item of cityList; let i = index">{{ item }}</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student No</th>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of studentList; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.course }}</td>
+      <td>
+        <p *ngIf="item.isActive === true; else inactive">Active</p>
+        <ng-template #inactive>
+          <p>Inactive</p>
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>
