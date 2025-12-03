@@ -1,0 +1,23 @@
+.page-404 {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.page-404 h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.page-404 .alert {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.page-404 .alert-heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
