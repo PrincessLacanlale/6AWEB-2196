@@ -1,0 +1,38 @@
+/* Center the container */
+:host {
+  display: block;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Make "List from Main" Bold and Centered */
+.main-title {
+  font-weight: bold; /* This makes it bold */
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Table Centering and Styling */
+table {
+  margin: 20px auto; /* Centering the table */
+  width: 80%;
+  border-collapse: collapse;
+  background-color: white; /* Body white */
+}
+
+/* Pink Header */
+th {
+  background-color: #ffc0cb; /* Pink top */
+  color: #333;
+  font-weight: bold;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* White Body Rows */
+td {
+  background-color: white; /* Body white */
+  padding: 12px;
+  border: 1px solid #ddd;
+}
