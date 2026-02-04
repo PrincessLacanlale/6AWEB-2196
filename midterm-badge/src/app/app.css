@@ -1,0 +1,66 @@
+/* Header Container */
+.main-header {
+  background-color: #2d3436; /* Professional Dark Gray */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* Logo Styling */
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #ff4d6d; /* The Pink Accent */
+}
+
+/* Navigation Links */
+.navbar {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar a {
+  color: #dfe6e9; /* Light Gray text */
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+/* Hover State */
+.navbar a:hover {
+  color: white;
+  background-color: rgba(255, 77, 109, 0.1);
+}
+
+/* Active Route Highlight - Required for the Rubric */
+.navbar a.active {
+  background-color: #ff4d6d; /* Solid Pink background */
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 77, 109, 0.3);
+}
+
+/* Main Content Spacing */
+.content-area {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}

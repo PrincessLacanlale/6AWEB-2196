@@ -1,0 +1,38 @@
+.about-container {
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Dark Gray */
+}
+
+h2 {
+  color: #ff4d6d; /* Vibrant Pink */
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.info-box {
+  background-color: #f8f9fa; /* Light Gray Background */
+  border-left: 5px solid #ff4d6d; /* Pink Side Accent */
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-box p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.info-box strong {
+  color: #ff4d6d; /* Pink labels */
+}

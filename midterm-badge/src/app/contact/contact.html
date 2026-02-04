@@ -1,0 +1,17 @@
+<div class="contact-page">
+  <h2>Contact Us</h2>
+  <form (ngSubmit)="onSubmit()">
+    <input type="text" [(ngModel)]="contact.name" name="name" placeholder="Name">
+    <input type="email" [(ngModel)]="contact.email" name="email" placeholder="Email">
+    <textarea [(ngModel)]="contact.message" name="message" placeholder="Message"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <hr>
+
+  <div class="preview">
+    <h3>Form Preview</h3>
+    <p><strong>Name:</strong> {{ contact.name | uppercase }}</p> <p><strong>Email:</strong> {{ contact.email }}</p>
+    <p><strong>Message:</strong> {{ contact.message }}</p>
+  </div>
+</div>
