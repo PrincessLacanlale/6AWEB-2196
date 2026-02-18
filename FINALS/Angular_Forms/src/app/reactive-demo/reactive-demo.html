@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <div class="card shadow-sm p-4 mx-auto" style="max-width: 500px; border-radius: 15px; border: 1px solid #ffccd5;">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2 class="text-center mb-4" style="color: #d63384; font-weight: 600;">Reactive Form Demo</h2>
+
+      <div class="mb-3">
+        <input type="text" formControlName="username" class="form-control"
+               [class.is-invalid]="isInvalid('username')" placeholder="Enter username">
+        <div class="invalid-feedback" *ngIf="isInvalid('username')">4-12 chars (letters/numbers/_)</div>
+      </div>
+
+      <div class="mb-3">
+        <input type="email" formControlName="email" class="form-control"
+               [class.is-invalid]="isInvalid('email')" placeholder="Enter email">
+      </div>
+
+      <div class="mb-3">
+        <input type="password" formControlName="password" class="form-control"
+               [class.is-invalid]="isInvalid('password')" placeholder="Enter password">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label d-block pink-label">Gender:</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="gender" value="Male" id="male">
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" formControlName="gender" value="Female" id="female">
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+        <small class="text-danger d-block" *ngIf="isInvalid('gender')">Gender is required</small>
+      </div>
+
+      <div class="mb-3">
+        <select formControlName="status" class="form-select" [class.is-invalid]="isInvalid('status')">
+          <option value="" disabled selected>Select Status</option>
+          <option value="Permanent">Permanent</option>
+          <option value="Probationary">Probationary</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <textarea formControlName="comments" class="form-control" placeholder="Enter comments/notes" rows="3"></textarea>
+      </div>
+
+      <button type="submit" [disabled]="form.invalid" class="btn btn-pink w-100">
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="submitted" class="mt-4 p-3 bg-white border rounded mx-auto shadow-sm" style="max-width: 500px; border-left: 5px solid #d63384 !important;">
+    <h4 style="color: #d63384;">Form Submitted Successfully!</h4>
+    <hr>
+    <p><strong>User:</strong> {{ form.value.username }}</p>
+    <p><strong>Status:</strong> {{ form.value.status }}</p>
+    <p><strong>Comments:</strong> {{ form.value.comments }}</p>
+  </div>
+</div>

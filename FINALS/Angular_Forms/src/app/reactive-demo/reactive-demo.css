@@ -1,0 +1,49 @@
+/* Custom Pink Theme for Reactive Form */
+:host {
+  display: block;
+  background-color: #fff5f7;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.pink-label {
+  color: #d63384 !important;
+  font-weight: 600;
+}
+
+.btn-pink {
+  background-color: #ff85a1 !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-pink:hover:not(:disabled) {
+  background-color: #d63384 !important;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.3);
+}
+
+.btn-pink:disabled {
+  background-color: #ffd1dc !important;
+  cursor: not-allowed;
+}
+
+/* Validation Focus Effects */
+.form-control:focus, .form-select:focus {
+  border-color: #ff85a1;
+  box-shadow: 0 0 0 0.25rem rgba(255, 133, 161, 0.25);
+}
+
+/* Styling for the radio buttons */
+.form-check-input:checked {
+  background-color: #d63384;
+  border-color: #d63384;
+}
+
+.invalid-feedback {
+  color: #d63384;
+  font-weight: 500;
+}

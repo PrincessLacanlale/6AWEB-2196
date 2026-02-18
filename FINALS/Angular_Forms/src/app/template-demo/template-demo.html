@@ -1,0 +1,76 @@
+<div class="form-wrapper">
+  <div class="form-card shadow">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+      <h2>{{ title }}</h2>
+
+      <div class="mb-3">
+        <input type="text" name="username" [(ngModel)]="username" #u="ngModel"
+               class="input-box" placeholder="Enter username" required minlength="4">
+        <small *ngIf="u.touched && u.invalid" class="error-text">
+          Username is required (min 4 chars).
+        </small>
+      </div>
+
+      <div class="mb-3">
+        <input type="email" name="email" [(ngModel)]="email" #e="ngModel"
+               class="input-box" placeholder="Enter email" required email>
+        <small *ngIf="e.touched && e.invalid" class="error-text">
+          Please enter a valid email address.
+        </small>
+      </div>
+
+      <div class="mb-3">
+        <input type="password" name="password" [(ngModel)]="password" #p="ngModel"
+               class="input-box" placeholder="Enter password" required minlength="8">
+        <small *ngIf="p.touched && p.invalid" class="error-text">
+          Password must be at least 8 characters.
+        </small>
+      </div>
+
+      <div class="mb-3">
+        <select name="role" [(ngModel)]="role" #r="ngModel" class="input-box" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+          <option value="Guest">Guest</option>
+        </select>
+        <small *ngIf="r.touched && r.invalid" class="error-text">Please select a role.</small>
+      </div>
+
+      <div class="mb-3">
+        <label class="pink-label">Gender:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" [(ngModel)]="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" [(ngModel)]="gender" value="Female" required> Female</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <select name="status" [(ngModel)]="status" #s="ngModel" class="input-box" required>
+          <option value="" disabled selected>Select Status</option>
+          <option value="Permanent">Permanent</option>
+          <option value="Probationary">Probationary</option>
+        </select>
+        <small *ngIf="s.touched && s.invalid" class="error-text">Status is required.</small>
+      </div>
+
+      <div class="mb-3">
+        <textarea name="comments" [(ngModel)]="comments"
+                  class="input-box" placeholder="Enter comments/notes" rows="3"></textarea>
+      </div>
+
+      <button type="submit" [disabled]="!myForm.valid" class="btn-pink">
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="submitted" class="results-card">
+    <h4>Submission Success:</h4>
+    <hr>
+    <p><strong>User:</strong> {{ username }}</p>
+    <p><strong>Role:</strong> {{ role }}</p>
+    <p><strong>Status:</strong> {{ status }}</p>
+    <p><strong>Comments:</strong> {{ comments }}</p>
+  </div>
+</div>
