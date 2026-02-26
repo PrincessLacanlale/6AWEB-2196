@@ -1,79 +1,80 @@
-<mat-toolbar color="primary">
-  <span>Finals Lab: Angular Material Demo</span>
-</mat-toolbar>
+<div [ngClass]="isDarkMode ? 'dark-theme' : 'light-theme'" class="main-wrapper">
+  
+  <mat-toolbar [color]="isDarkMode ? 'accent' : 'primary'">
+    <mat-icon>sports_esports</mat-icon>
+    <span>&nbsp;Cyber Tournament Reg</span>
+    <span class="spacer"></span>
+    <mat-slide-toggle (change)="toggleTheme()" [checked]="isDarkMode">
+      {{ isDarkMode ? 'Dark' : 'Light' }}
+    </mat-slide-toggle>
+  </mat-toolbar>
 
-<div class="form-container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Registration</mat-card-title>
-    </mat-card-header>
+  <div class="form-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Join the Challenge</mat-card-title>
+      </mat-card-header>
 
-    <mat-card-content>
-      <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
-        
-        <mat-form-field appearance="outline">
-          <mat-label>Username</mat-label>
-          <mat-icon matPrefix>person</mat-icon> 
-          <input matInput placeholder="Enter Text" formControlName="userName">
-        </mat-form-field>
+      <mat-card-content>
+        <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+          
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput formControlName="userName">
+          </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <mat-icon matPrefix>email</mat-icon>
-          <input matInput type="email" placeholder="Enter Email" formControlName="email">
-          @if (formdata.controls['email'].invalid && formdata.controls['email'].touched) {
-            <mat-error>Email is required and must be a valid email.</mat-error>
-          }
-        </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <mat-icon matPrefix>lock</mat-icon>
+            <input matInput type="password" formControlName="password">
+            <mat-hint>Alphanumeric, starts with letter (8+ chars)</mat-hint>
+            @if (formdata.get('password')?.errors?.['pattern']) {
+              <mat-error>Must start with a letter and be alphanumeric.</mat-error>
+            }
+          </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <mat-icon matPrefix>lock</mat-icon>
-          <input matInput type="password" placeholder="Enter password" formControlName="password">
-          @if (formdata.controls['password'].invalid && formdata.controls['password'].touched) {
-            <mat-error>Password must be at least 8 characters.</mat-error>
-          }
-        </mat-form-field>
+          <mat-form-field appearance="outline">
+  <mat-label>Email</mat-label>
+  <mat-icon matPrefix>email</mat-icon>
+  <input matInput type="email" placeholder="Enter Email" formControlName="email">
+  @if (formdata.get('email')?.invalid && formdata.get('email')?.touched) {
+    <mat-error>A valid email is required.</mat-error>
+  }
+</mat-form-field>
 
-        <div class="radio-group">
-          <label class="radio-label">Gender</label>
-          <mat-radio-group formControlName="gender">
-            <mat-radio-button value="male">Male</mat-radio-button>
-            <mat-radio-button value="female">Female</mat-radio-button>
-            <mat-radio-button value="other">Other</mat-radio-button>
-          </mat-radio-group>
-        </div>
+          <mat-form-field appearance="outline">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [matDatepicker]="picker" [max]="maxDate" formControlName="birthDate" readonly>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error>Must be born in 2006 or earlier.</mat-error>
+          </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Birth Date</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="birthDate">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+          <mat-divider></mat-divider>
 
-        <div class="slider-group">
-          <label class="slider-label">Angular Skill Level: {{ formdata.get('angularSkillLevel')?.value }}</label>
-          <mat-slider min="1" max="10" step="1" discrete>
-            <input matSliderThumb formControlName="angularSkillLevel">
-          </mat-slider>
-        </div>
+          <div class="radio-group">
+            <label class="section-label">Player Role</label>
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button value="Attacker">Attacker</mat-radio-button>
+              <mat-radio-button value="Defender">Defender</mat-radio-button>
+              <mat-radio-button value="Support">Support</mat-radio-button>
+            </mat-radio-group>
+          </div>
 
-        <button mat-raised-button class="submit-btn" type="submit" [disabled]="!formdata.valid">
-        SUBMIT REGISTRATION
-        </button>
 
-      </form>
+          <button mat-raised-button class="submit-btn" type="submit" [disabled]="!formdata.valid">
+            CONFIRM ENTRY
+          </button>
+        </form>
 
-      @if (submitted) {
-        <div class="submission-results">
-          <h3>Form Results:</h3>
-          <p><strong>Username:</strong> {{ userName }}</p>
-          <p><strong>Email:</strong> {{ email }}</p>
-          <p><strong>Gender:</strong> {{ gender }}</p>
-          <p><strong>Birth Date:</strong> {{ birthDate | date:'longDate' }}</p>
-          <p><strong>Skill Level:</strong> {{ angularSkillLevel }}</p>
-        </div>
-      }
-    </mat-card-content>
-  </mat-card>
+        @if (submitted) {
+          <div class="results">
+            <mat-divider></mat-divider>
+            <p>Welcome, <strong>{{userData.userName}}</strong>! Your age verification and credentials are valid.</p>
+          </div>
+        }
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

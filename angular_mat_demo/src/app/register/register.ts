@@ -1,84 +1,68 @@
 import { Component } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-// Import form tools (Image 2 & 4)
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
-// Import Material Modules (Image 2)
+// Material Modules
 import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSliderModule } from '@angular/material/slider';
-
-// Extra 3 Components for your Lab Requirement
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
+// CHALLENGE ADDITIONS: 3 New Components
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [
-    CommonModule, 
-    ReactiveFormsModule, 
-    MatButtonModule, 
-    MatCheckboxModule, 
-    MatNativeDateModule, 
-    MatDatepickerModule, 
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatRadioModule, 
-    MatSliderModule,
-    MatCardModule,
-    MatIconModule,
-    MatToolbarModule
+    CommonModule, ReactiveFormsModule, MatButtonModule, MatNativeDateModule, 
+    MatDatepickerModule, MatFormFieldModule, MatInputModule, MatRadioModule, 
+    MatSliderModule, MatCardModule, MatIconModule, MatToolbarModule,
+    MatSlideToggleModule, MatDividerModule, MatSelectModule
   ],
   templateUrl: './register.html',
   styleUrl: './register.css',
   providers: [DatePipe]
 })
 export class Register {
-  // --- Data Model (Image 3) ---
-  userName: string = '';
-  email: string = '';
-  password: string = '';
-  gender: string = '';
-  birthDate!: Date;
-  address: string = '';
-  angularSkillLevel: number = 5;
-  submitted = false;
-  minSkillLevel = 1;
-  maxSkillLevel = 10;
+  // Theme state
+  isDarkMode = true;
 
-  // --- Reactive Form Setup (Image 3 & 4) ---
+  // Challenge: Birth year 2006 or below
+  maxDate: Date = new Date(2006, 11, 31); 
+
+  submitted = false;
+  userData: any;
+
   formdata: FormGroup = new FormGroup({
-    userName: new FormControl(''),
+    userName: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    password: new FormControl('', [
+      Validators.required, 
+      Validators.minLength(8),
+      // Challenge: Starts with letter, only alphanumeric
+      Validators.pattern(/^[a-zA-Z][a-zA-Z0-9]*$/) 
+    ]),
     gender: new FormControl('', [Validators.required]),
     birthDate: new FormControl(null, [Validators.required]),
-    address: new FormControl(''),
-    angularSkillLevel: new FormControl(5)
+    skillLevel: new FormControl(5),
+    role: new FormControl('') // Using MatSelect here
   });
 
-  // --- Submit Method (Image 4) ---
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+  }
+
   onClickSubmit(data: any) {
     this.submitted = true;
-    this.userName = data.userName;
-    this.email = data.email;
-    this.password = data.password;
-    this.gender = data.gender;
-    this.address = data.address;
-    this.angularSkillLevel = data.angularSkillLevel;
-    this.birthDate = data.birthDate;
-
-    if (this.formdata.valid) {
-      console.log("Form Submitted!", this.formdata.value);
-    } else {
-      console.log("Form is not valid!");
-    }
+    this.userData = data;
   }
 }
